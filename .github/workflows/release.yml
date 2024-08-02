@@ -1,0 +1,79 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.20'
+
+      - name: Build for Linux amd64
+        run: |
+          mkdir -p build/linux
+          GOOS=linux GOARCH=amd64 go build -o build/linux/daily-linux-amd64
+
+      - name: Build for Windows amd64
+        run: |
+          mkdir -p build/windows
+          GOOS=windows GOARCH=amd64 go build -o build/windows/daily-windows-amd64.exe
+
+      - name: Build for ARM
+        run: |
+          mkdir -p build/arm
+          GOOS=linux GOARCH=arm go build -o build/arm/daily-linux-arm
+
+      - name: Archive build outputs with static files
+        run: |
+          mkdir -p build/linux_release
+          mkdir -p build/windows_release
+          mkdir -p build/arm_release
+
+          # Copy built binaries and static files to the release directories
+          cp build/linux/daily-linux-amd64 build/linux_release/
+          cp -r public static build/linux_release/
+
+          cp build/windows/daily-windows-amd64.exe build/windows_release/
+          cp -r public static build/windows_release/
+
+          cp build/arm/daily-linux-arm build/arm_release/
+          cp -r public static build/arm_release/
+
+          # Create tar.gz archives
+          tar -czvf build/linux_release.tar.gz -C build/linux_release .
+          tar -czvf build/windows_release.tar.gz -C build/windows_release .
+          tar -czvf build/arm_release.tar.gz -C build/arm_release .
+
+      - name: Upload Release Assets
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: build/linux_release.tar.gz
+          asset_name: myapp-linux-release.tar.gz
+          asset_content_type: application/gzip
+
+      - name: Upload Windows Release Assets
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: build/windows_release.tar.gz
+          asset_name: myapp-windows-release.tar.gz
+          asset_content_type: application/gzip
+
+      - name: Upload ARM Release Assets
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: build/arm_release.tar.gz
+          asset_name: myapp-arm-release.tar.gz
+          asset_content_type: application/gzip
