@@ -1,0 +1,4 @@
+displayName: 商务名片
+css: card.css
+model: model.yaml
+template: template.html

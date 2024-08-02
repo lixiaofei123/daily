@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="top">
+        <div class="avatar">
+            <img src="{{.model.avatar.url}}" skeleton="image" />
+        </div>
+        <div class="infos">
+            <div class="name" skeleton="text;width=80px;line=1">{{.model.name}}</div>
+            <div class="job" skeleton="text;width=60px;line=1">{{.model.job}}</div>
+            <div class="company" skeleton="text;width=70%;line=1">{{.model.company}}</div>
+        </div>
+    </div>
+    <div class="bottom">
+        <ul>
+            {{if .model.tel}}
+            <li>
+                <i class="iconfont icon-tel"></i>
+                <span><a href="tel:{{.model.tel}}">{{.model.tel}}</a></span>
+            </li>
+            {{end}}
+            {{if .model.email}}
+            <li>
+                <i class="iconfont icon-email" style="font-size:16px"></i>
+                <span><a href="mailto:{{.model.email}}">{{.model.email}}</a></span>
+            </li>
+            {{end}}
+            {{if .model.wechat}}
+            <li>
+                <i class="iconfont icon-wechat"></i>
+                <span>{{.model.wechat}}</span>
+            </li>
+            {{end}}
+            {{if .model.site}}
+            <li>
+                <i class="iconfont icon-www" style="font-size:16px"></i>
+                <span><a href="{{.model.site}}" target="_blank">{{.model.site}}</a></span>
+            </li>
+            {{end}}
+            {{if .model.address}}
+            <li>
+                <i class="iconfont icon-locationfill"></i>
+                <span>{{.model.address}}</span>
+            </li>
+            {{end}}
+        </ul>
+        {{if .model.qrcode}}
+        {{if .model.qrcode.url}}
+            <div class="qrcode">
+                <img src="{{.model.qrcode.url}}" />
+                {{if .model.qrcode_text}}
+                <div class="text">{{.model.qrcode_text}}</div>
+                {{end}}
+            </div>
+        {{end}}
+        {{end}}
+    </div>
+</div>

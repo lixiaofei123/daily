@@ -1,0 +1,1 @@
+console.log("Common卡片全局初始化")

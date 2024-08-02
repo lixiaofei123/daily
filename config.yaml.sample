@@ -1,0 +1,67 @@
+site: 
+  title: "记录我的日常生活"
+  icp: 京A123456
+  favicon:
+  background: https://img.108429.xyz/file/stroage/2024/05/22/gweebhscfh.jpg
+  BaiDuTongJi: 
+  imageCompress: false
+
+lbs: 
+  name: Baidu
+  config: 
+    ak: xxxyyyzzz
+
+# uploader: 
+#   name: ImageHostCFWorkers   # https://github.com/lixiaofei123/image-hosting-cfworkers
+#   config: 
+#     url: "https://img.108429.xyz"
+#     signkey: xxxyyyzzz
+
+# uploader: 
+#   name: S3
+#   config: 
+#     secretId: xxxyyyzzz
+#     secretKey: xxxyyyzzz
+#     region: ap-beijing
+#     endpoint: https://cos.ap-beijing.myqcloud.com
+#     bucket: mydaily-1303112930
+#     virutalHost: true
+#     domain: https://xxxyyyzzz.lixf.ink
+#     pkey: testtest
+#   ratelimit: 10:60;5000:3600
+
+uploader: 
+  name: Local
+  config: 
+    root: /workspaces/data
+  logger: 
+    path: /workspaces/log
+  ratelimit: 100:60;5000:3600
+
+
+# uploader:
+#   name: 123YunPanOpenAPI
+#   config: 
+#     clientID: xxxyyyzzz
+#     clientSecret: xxxyyyzzz
+#     dlzone: daily
+#     uid: 1834041941
+#     signKey: xxxyyyzzz
+
+
+# uploader: 
+#   name: Remote 
+#   config: 
+#     secret: xxxyyyzzz
+#     url: https://automatic-space-carnival-xqvjvgrrpr52pqjg-8082.app.github.dev
+#   ratelimit: 1000:60;5000:3600
+  
+auth:
+  secret: xxxyyyzzz
+
+database:
+  host: "127.0.0.1"
+  port: 5432
+  user: "daily"
+  password: "daily123"
+  name: "daily"

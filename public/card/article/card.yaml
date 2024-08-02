@@ -1,0 +1,4 @@
+displayName: 文章
+css: card.css
+model: model.yaml
+template: template.html

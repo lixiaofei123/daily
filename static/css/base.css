@@ -1,0 +1,1336 @@
+body {
+    background: #EDEDED;
+    padding: 0px;
+    margin: 0px;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+img {
+    object-fit: cover;
+}
+
+
+.background {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-size: cover;
+}
+
+.container {
+    width: 100%;
+    max-width: 540px;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    min-height: calc(100vh - 40px);
+    box-shadow: 6px 4px 5px lightgrey;
+    padding-bottom: 20px;
+}
+
+.container .loadmore {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: grey;
+    cursor: pointer
+}
+
+div::-webkit-scrollbar {
+    display: none;
+}
+
+div {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.banner {
+    width: 100%;
+    position: relative;
+    height: 300px;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner .userinfo {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: -20px;
+}
+
+.banner .userinfo .avatar {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: absolute;
+    right: 15px;
+}
+
+
+.banner .userinfo .username {
+    position: absolute;
+    right: 110px;
+    color: white;
+    bottom: 35px;
+    font-size: 20px;
+}
+
+.banner .userinfo .signature {
+    color: #6A6A6A;
+    font-size: 14px;
+    position: absolute;
+    right: 20px;
+    bottom: -25px;
+    font-weight: 520;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70%;
+    text-align: right;
+}
+
+.banner .homeicon {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    cursor: pointer;
+    display: flex;
+}
+
+.banner .homeicon div {
+    margin-left: 10px;
+}
+
+.banner .bannericon {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+    display: flex;
+}
+
+.banner .bannericon div {
+    margin-right: 10px;
+}
+
+.banner .iconfont{
+    font-size: 22px;
+    color: white;
+    margin-right: 6px;
+}
+
+.posts-container {
+    width: calc(100% - 50px);
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.posts-container .post {
+    display: flex;
+    border-bottom: 1px solid #F5F5F5;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.posts-container .post .avatar-contanier {
+    width: 50px;
+    text-align: left;
+}
+
+.posts-container .post .avatar-contanier .avatar {
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.posts-container .post .avatar-contanier .avatar img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+}
+
+.posts-container .post .content {
+    flex: 1;
+}
+
+.posts-container .post .content .username a {
+    color: #5F6E8F;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.posts-container .post .content .text {
+    color: #212121;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 6px;
+    word-break: break-all;
+}
+
+
+.posts-container .post .content .text a {
+    text-decoration: none;
+    color: #409eff;
+    vertical-align: baseline;
+}
+
+.posts-container .post .content .images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.posts-container .post .content .toptop {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #FA5251;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 2px 5px
+}
+
+.posts-container .post .content .images .post-img {
+    width: calc(33% - 5px);
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.posts-container .post .content .images .post-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.posts-container .post .content .singimage {
+    max-width: 100%;
+    max-height: 350px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    position: relative;
+    text-align: left;
+}
+
+.posts-container .post .content .singimage img {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+.posts-container .post .content .position {
+    color: #616E8C;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.posts-container .post .content .publishtime {
+    color: #B3B3B3;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.posts-container .post .content .publishtime a {
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 15px;
+    color: #718198;
+    
+}
+
+.posts-container .post .content .publishtime span,
+.posts-container .post .content .publishtime a{
+    vertical-align: middle;
+}
+
+
+.posts-container .post .content .playbutton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.posts-container .post .content .playbutton .iconfont{
+    color:white;
+    font-size:40px;
+}
+
+.posts-container .post .content .link-container a {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background: rgb(228, 228, 228);
+    margin-bottom: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.posts-container .post .content .link-container .icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background: #F2F2F2;
+}
+
+.posts-container .post .content .link-container .link {
+    padding: 5px 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.posts-container .post .content .link-container .link .text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    white-space: normal;
+    color: #767676;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.posts-container .post .content .content-0 {
+    position: relative;
+}
+
+.posts-container .post .content .content-1 {
+    background: #F7F7F7;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.posts-container .post .content .content-1 .likes {
+    padding: 2px 8px;
+    color: #5A658C;
+    font-size: 14px;
+    font-weight: 520;
+}
+
+.posts-container .post .content .content-1 .likes .iconfont{
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.posts-container .post .content .content-1 .likes a {
+    text-decoration: none;
+    color: #5A658C;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.posts-container .post .content .content-1 .likes  .icon{
+    vertical-align: middle;
+}
+
+.posts-container .post .content .content-1 .line {
+    border-top: 1px solid #EEEEEE;
+    width: 100%;
+}
+
+.posts-container .post .content .content-1 .replys {
+    padding: 2px 8px;
+    color: #5A658C;
+    font-size: 14px;
+    font-weight: 520;
+}
+
+.posts-container .post .content .content-1 .replys .text {
+    color: #454545;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.posts-container .post .content .content-1 .replys a {
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.posts-container .post .content .content-1 .replys .support {
+    color: #409EFF;
+}
+
+.posts-container .post .content .content-1 .replys .delete {
+    color: #F56C6C;
+}
+
+
+
+.posts-container .post .buttons {
+    height: 30px;
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+}
+
+.posts-container .post .buttons .dotbutton {
+    color: #596992;
+    background: #F7F7F7;
+    padding: 0px 8px;
+    font-weight: 600;
+    border-radius: 4px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.posts-container .post .buttons .opbuttons {
+    position: absolute;
+    width: 0px;
+    right: -5px;
+    bottom: 0px;
+    overflow: hidden;
+    transition: width 0.2s;
+    z-index: 1;
+}
+
+.posts-container .post .buttons .opbuttons .inner-opbuttons {
+    width: 142px;
+}
+
+.posts-container .post .buttons .opbuttons .button {
+    background: #4C4C4C;
+    margin: 0px;
+    border: 0px;
+    outline: none;
+    color: #E7E7E7;
+    display: inline-block;
+    padding: 10px 10px;
+    width: 50px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.posts-container .post .buttons .opbuttons .button:hover {
+    background: #444444;
+}
+
+.posts-container .post .buttons .opbuttons .iconfont {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.posts-container .post .buttons .opbuttons #like {
+    border-radius: 4px 0px 0px 4px;
+    border-right: 1px solid #444444;
+}
+
+.posts-container .post .buttons .opbuttons #reply {
+    border-radius: 0px 4px 4px 0px;
+}
+
+.posts-container .post .buttons .opbuttons span {
+    vertical-align: middle;
+}
+
+
+.inputreply {
+    width: 100%;
+    height: 170px;
+    transition: height 0.5s;
+    overflow: hidden;
+}
+
+
+.inputreply .inner-inputreply {
+    border: 1px solid #E4E7ED;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+}
+
+.inputreply .inner-inputreply .commenttext {
+    height: 96px;
+    outline: none;
+    overflow-x: hidden;
+    font-size: 14px;
+    color: #606266;
+    width: calc(100% - 16px);
+    resize: none;
+    border: 0px;
+}
+
+.inputreply .inner-inputreply .comment-remainnum{
+    position: absolute;
+    bottom: 40px;
+    right: 6px;
+    font-size: 12px;
+    color: grey;
+}
+
+.inputreply .inner-inputreply .otherinfo {
+    margin-top: 5px;
+    display: flex;
+}
+
+.inputreply .inner-inputreply .otherinfo .otherinfoinput {
+    flex: 1;
+}
+
+
+.inputreply .inner-inputreply .otherinfo input {
+    outline: none;
+    border: 0px;
+    width: 40%;
+    color: grey;
+}
+
+.inputreply .inner-inputreply .otherinfo .pubbutton {
+    width: 60px;
+    background: #07BF5F;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 4px 0px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.inputreply .inner-inputreply .otherinfo .pubbutton:hover {
+    background: #05a150;
+}
+
+.inputreply .closerinputreply {
+    text-align: right;
+}
+
+.inputreply .closerinputreply a {
+    font-size: 12px;
+    color: #909399;
+    text-decoration: none;
+}
+
+.container .publish-post {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 500px;
+    transition: top 0.3s;
+    background: white;
+    display: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 100;
+    /* top: 0px; */
+}
+
+.container .publish-post .titlebar {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.container .publish-post .titlebar button {
+    border: 0px;
+    outline: none;
+    padding: 5px 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.container .publish-post .titlebar .cancel {
+    background: none;
+
+}
+
+.container .publish-post .titlebar .cancel:hover {
+    color: rgb(83, 83, 83);
+}
+
+.container .publish-post .titlebar .publish {
+    background: #07BF5F;
+    color: white;
+    border-radius: 5px;
+}
+
+.container .publish-post .titlebar .disabled {
+    background: #F2F2F2;
+    color: #CECECE;
+}
+
+.container .publish-post .editpost {
+    width: calc(100% - 60px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container .publish-post .iconfont{
+    font-size: 22px;
+}
+
+.container .publish-post .editarea-ops {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.container .publish-post .editarea-ops .btn{
+    border: 1px solid #EBEEF5;
+    padding: 6px 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    background: none;
+    outline: 0px;
+    font-size: 14px;
+    color: #606266;
+}
+
+.container .publish-post .editarea-ops .btn:hover{
+    border: 1px solid #d3d3d3;
+    background: #d3d3d3;
+}
+
+.container .publish-post .editarea-ops .btn .iconfont{
+    font-size: 18px;
+}
+
+
+.container .publish-post .editpost .post-a{
+    display: none;
+}
+
+.container .publish-post .editpost .editarea {
+    width: 100%;
+    outline: none;
+    min-height: 50px;
+}
+
+
+[contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    pointer-events: none;
+    display: block;
+    color: #C8C8C8;
+}
+
+.container .publish-post .editpost .pics {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.container .publish-post .editpost .pics .uploader {
+    width: calc(33% - 6px);
+    margin: 3px;
+    aspect-ratio: 1 / 1;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .publish-post .editpost .pics .uploader .progressbar{
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    height:3px;
+    background:#409EFF
+}
+
+.container .publish-post .paltform{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container .publish-post .paltform .preview {
+    padding-top: 10px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #C0C4CC;
+}
+.container .publish-post .paltform .paltformbuttons button{
+    background: white;
+    outline: none;
+    margin: 0px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid #EBEEF5;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+
+.container .publish-post .paltform .paltformbuttons button:hover{
+    color: white;
+    background: #07BF5F;
+}
+
+.container .publish-post .paltform .paltformbuttons .click{
+    color: white;
+    background: #07BF5F;
+}
+
+.container .publish-post .posttype_card .card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container .publish-post .posttype_card .cardbuttons{
+    margin-bottom: 10px;
+}
+.container .publish-post .posttype_card .cardbuttons button{
+    background: white;
+    outline: none;
+    margin: 0px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid #EBEEF5;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+
+.container .publish-post .posttype_card .cardbuttons button:hover{
+    color: white;
+    background: #07BF5F;
+}
+
+.container .publish-post .posttype_card .cardbuttons .click{
+    color: white;
+    background: #07BF5F;
+}
+
+.container .publish-post .posttype_card .array a{
+    color: #909399;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.container .publish-post .uploadMusicBar{
+    position: absolute; 
+    bottom:0px;
+    left:0px;
+    height:2px;
+    background:#409EFF;
+    width:0
+}
+
+.container .publish-post .musicarea{
+    padding-top: 10px;
+}
+
+.container .publish-post .item{
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+    padding: 12px 20px;
+}
+
+.container .publish-post  .item .label{
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+}
+
+.container .publish-post  .item .value{
+    flex: 1;
+    text-align: right;
+    color: #606266;
+}
+
+.container .publish-post .item .value .imageinput{
+    width:60px;
+    height:60px;
+    float: right;
+}
+
+
+.container .publish-post .item .value input{
+    border: 0px;
+    background: none;
+    outline: none;
+    text-align: right;
+    font-size: 16px;
+    width: calc(100% - 100px);
+}
+
+.container .publish-post .item .value textarea{
+    width: calc(100% - 100px);
+    resize: none;
+    overflow-y: hidden;
+    height: 60px;
+    outline: none;
+    padding: 5px 10px;
+    border: 0px;
+}
+
+
+.container .publish-post .item .value select {
+    min-width: 60px;
+    padding: 2px 10px;
+    font-size: 15px;
+}
+
+.uploader  .deleteicon {
+    width: 22px;
+    height: 22px;
+    padding: 6px;
+    border-radius: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: #FA5251;
+    color: white;
+}
+
+.uploader .deleteicon:hover {
+    background: #f93e3e;
+}
+
+.container .publish-post .editpost .visibility {
+   margin-top: 20px;
+   font-size: 16px;
+   color: #4e4d4d;
+   text-align: right;
+}
+
+.container .publish-post .editpost .menuitems {
+    margin-top: 40px;
+}
+
+.container .publish-post .editpost .menuitems .ul,
+.container .publish-post .editpost .menuitems .li {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.container .publish-post .editpost .menuitems .li {
+    border-bottom: 2px solid #FAFAFA;
+    padding: 15px 5px;
+    font-size: 16px;
+    color: #4e4d4d;
+    cursor: pointer;
+    position: relative;
+}
+
+.container .publish-post .editpost .menuitems .li:first {
+    border-top: 2px solid #FAFAFA;
+}
+
+.container .publish-post .editpost .menuitems .li:hover {
+    background: #FAFAFA;
+}
+
+.container .publish-post .editpost .menuitems .li * {
+    vertical-align: middle;
+}
+
+.container .publish-post .editpost .menuitems .menuinput {
+    width: 100%;
+    transition: height 0.3s;
+    overflow: hidden;
+    height: 0px;
+}
+
+
+.container .publish-post .editpost .menuitems #addressinputbox{
+    display: flex;
+}
+
+.container .publish-post .editpost .menuitems #addressinputbox input {
+    width: calc(25% - 30px);
+    padding: 4px 8px;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #C8C8C8;
+    line-height: 18px;
+    margin-top: 10px;
+}
+
+.container .publish-post .editpost .menuitems #addressinputbox button{
+    border: 0px;
+    background: none;
+    outline: none;
+    height: 50px;
+    cursor: pointer;
+}
+
+.container .publish-post .editpost .menuitems #linkinputbox input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #C8C8C8;
+    line-height: 22px;
+    width: calc(100% - 30px);
+    margin-top: 10px;
+}
+
+.container .publish-post .editpost .menuitems .menuinput span {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #4e4d4d;
+}
+
+
+.container .settingpage {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 500px;
+    transition: top 0.3s;
+    background: #e7e7e7;
+    display: none;
+    /* top: 0px; */
+    padding-top: 30px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+    z-index: 100;
+}
+
+.container .settingpage ul,
+.container .settingpage li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.container .settingpage li {
+    padding: 15px 10px;
+    background: white;
+    border-bottom: 1px solid #e7e7e7;
+    cursor: pointer;
+
+}
+
+.container .settingpage li:hover {
+    background: rgb(239, 239, 239);
+}
+
+.container .settingpage li.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.container .settingpage li .key {
+    color: #131313;
+}
+
+.container .settingpage li .value {
+    font-size: 16px;
+    color: #757575;
+    outline: none;
+    border: 0px;
+    text-align: right;
+    width: 60%;
+    background: none;
+}
+
+
+
+.container .settingpage li .mysgin {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 0px;
+    outline: none;
+    color: #C8C8C8;
+}
+
+.container .settingpage li .avatar {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.container .settingpage li .mybanner {
+    width: 200px;
+    height: 160px;
+    overflow: hidden;
+}
+
+
+.container .settingpage ul .label {
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.container .settingpage .accountset .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.container .settingpage .accountset .accountinfo {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+}
+
+.container .settingpage .accountset .a-right {
+    display: flex;
+}
+
+.container .settingpage .accountset .a-btn {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .settingpage .accountset .a-btn a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #1586F0;
+}
+
+.container .settingpage .accountset .a-btn .disable {
+    color: #FA5251;
+}
+
+.container .settingpage .accountset .accountinfo .a-user {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.container .settingpage .accountset .accountinfo .a-email {
+    font-size: 14px;
+    color: grey;
+}
+
+.container .settingpage .newuser {
+    padding: 20px 10px;
+}
+
+.container .settingpage .newuser a {
+    text-decoration: none;
+    color: #757575;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 10px 0px;
+    color: #616161;
+    font-size: 14px;
+    background: rgb(255, 255, 255, 0.8);
+    text-align: center;
+    z-index: 1000;
+}
+
+.footer a {
+    color: #616161;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+.innter-footer {
+    color: #616161;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: -10px;
+    display: none;
+}
+
+.innter-footer a{
+    color: #616161;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+
+
+.toastbox {
+    position: fixed;
+    bottom: 150px;
+    left: 0px;
+    right: 0px;
+    z-index: 1000;
+}
+
+.toastbox div {
+    margin-left: auto;
+    margin-right: auto;
+    background: #2f2f2f;
+    color: white;
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-align: center;
+    width: max-content;
+    margin-top: 10px;
+}
+
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-viewer{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#image-viewer .image-view-mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+#image-viewer .image-viewer__btn{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-sizing: border-box;
+    user-select: none;
+    width: 30px;
+    height: 30px;
+}
+
+#image-viewer .image-viewer__close {
+    top: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    color: #fff;
+    background-color: #606266;
+}
+
+#image-viewer .image-viewer__prev {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    color: #fff;
+    background-color: #606266;
+    border-color: #fff;
+    left: 20px;
+}
+
+#image-viewer .image-viewer__next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    color: #fff;
+    background-color: #606266;
+    border-color: #fff;
+    right: 20px;
+    text-indent: 2px;
+}
+
+#image-viewer .waiticon{
+    width:60px;
+    height:60px;
+    position:absolute;
+    left: calc(50%-60px);
+    display: none;
+}
+
+#image-viewer .image-viewer__canvas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-viewer .image-viewer__canvas img,
+#image-viewer .image-viewer__canvas video
+{
+    transform: scale(1) rotate(0deg); 
+    margin-left: 0px; 
+    margin-top: 0px; 
+    max-height: 100%; 
+    max-width: 100%;
+}
+
+
+.scroll-top-button {
+    position: fixed;
+    bottom: 60px;
+    right: 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+
+}
+
+.scroll-top-button .iconfont{
+    font-size: 22px;
+}
+
+.scroll-top-button.active{
+    background-color: #007bff;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.musicplayer{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #ccc;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+.musicplayer:hover{
+    background: #F3F5F7;
+}
+.musicplayer .cover{
+    width: 60px;
+    margin-right: 15px;
+    position: relative;
+}
+
+.musicplayer .cover img{
+    width: 60px;
+    height: 60px;
+}
+
+.musicplayer .cover .btn{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+.musicplayer .cover .btn .iconfont{
+    font-size: 30px;
+    line-height: 60px;
+}
+
+.musicplayer .main{
+    flex: 1;
+    padding-top: 10px;
+}
+
+.musicplayer  .stitle{
+    font-size:12px;
+    color:#959697
+}
+
+.musicplayer  .mtitle{
+    font-size: 14px;
+} 
+
+.musicplayer  .progress {
+    padding-top: 6px;
+    display: flex;
+}
+.musicplayer .progresstotal {
+    flex: 1;
+    height: 2px;
+    background: rgba(0, 0, 0, .12);
+    position: relative;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.musicplayer .ring {
+    width: 6px;
+    height: 6px;
+    border: 1px solid rgba(0, 0, 0, .16);
+    border-radius: 6px;
+    position: absolute;
+    background: white;
+    top: -3px;
+    cursor: pointer;
+}
+
+.musicplayer span.musictime {
+    width: 50px;
+    color: #959697;
+    vertical-align: baseline;
+    font-size: 12px;
+}
+
+.musicplayer .progressbar {
+    position: absolute;
+    height: 2px;
+    top: 0px;
+    background: #31C27C;
+    width: 0%;
+    left: 0px;
+}

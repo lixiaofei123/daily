@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{$site := GetSiteConfig}}
+{{$buildtime := GetBuildTime}}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ if $site.Favicon}}
+    <link rel="shortcut icon" href="{{$site.Favicon}}">
+    {{else}}
+    <link rel="shortcut icon" href="{{.user.Profile.Avatar}}">
+    {{end}}
+    {{ if .uid}}
+    <title>{{.user.User.Username}}</title>
+    {{else }}
+    <title>{{$site.Title}}</title>
+    {{end}}
+
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css?t={{$buildtime}}" />
+    <link rel="stylesheet" type="text/css" href="/static/css/dialog.css?t={{$buildtime}}" />
+    <link rel="stylesheet" href="/static/icon/ali/iconfont.css?t={{$buildtime}}">
+    <script src="/static/js/jquery-3.7.1.min.js"></script>
+    <script src="/static/js/js.cookie.min.js"></script>
+    <script src="/static/js/crypto-js.min.js"></script>
+    <script src="/static/js/jsmediatags.min.js"></script>
+    <script src="/static/js/dialog.js?t={{$buildtime}}"></script>
+    <script src="/static/js/uploader.js?t={{$buildtime}}"></script>
+    <script src="/static/js/viewer.js?t={{$buildtime}}"></script>
+    <script src="/static/js/music.js?t={{$buildtime}}"></script>
+    <script src="/static/js/user.js?t={{$buildtime}}"></script>
+    <script src="/static/js/card.js?t={{$buildtime}}"></script>
+    <script src="/static/js/index.js?t={{$buildtime}}"></script>
+    <script>
+        {{ if .uid}}
+        let isDetail = false
+        let pageurl = "/user/page/{{.uid}}"
+        let home = "/user/{{.uid}}"
+        {{else if .isDetail}}
+        let isDetail = true
+        let home = "/"
+        {{else }}
+        let isDetail = false
+        let pageurl = "/page"
+        let home = "/"
+        {{ end }}
+
+        let forceCompressImage = {{ $site.ImageCompress }};
+        let sitename = "{{$site.Title}}"
+
+    </script>
+    {{if $site.CustomCardJs}}
+    <script>
+        {{ $site.CustomCardJs }}
+    </script>
+    {{end}}
+    {{if $site.CustomCardCss}}
+    {{range $site.CustomCardCss}}
+    <link rel="stylesheet" type="text/css" href="/static/css/card/{{.}}?t={{$buildtime}}" />
+    {{end}}
+    {{end}}
+
+</head>
+
+<body>
+    <div class="background" {{if $site.Background}} style="background-image: url({{$site.Background}});" {{end}}></div>
+    <div class="container">
+        {{ template "banner.html" .}}
+        <div class="posts-container" id="posts-container">
+            <div id="page1">
+                {{ template "page.html" .}}
+            </div>
+        </div>
+
+        {{if not .isDetail}}
+        <div class="loadmore" id="loadmore">
+            点击继续加载
+        </div>
+        {{end}}
+
+
+        <div class="innter-footer">
+            {{ template "footer.html" .}}
+        </div>
+
+
+        {{if .cuid}}
+
+        <div class="publish-post" id="publishpostPage">
+            <div class="titlebar">
+                <button class="cancel" id="cancelpublishpostPageBtn">取消</button>
+                <button class="publish" id="publishpostPageBtn">发表</button>
+            </div>
+            <div class="editpost">
+                <div class="editarea-ops">
+                    <button class="btn addLinkBtn">
+                        <i class="iconfont icon-link"></i>
+                    </button>
+                </div>
+                <div class="editarea" id="editpost-text" contenteditable="true" placeholder="分享此刻的生活..."></div>
+                <div class="pics post-a posttype_image" id="postpics"></div>
+                <div style="clear: both;"></div>
+                <div class="menuitems">
+                    <ul class="ul">
+                        <div class="post-a  posttype_extenral">
+                            <li id="externalinputbtn" class="li">
+                                <i class="iconfont icon-video-fill"></i>
+                                &nbsp;
+                                插入外部音视频
+                            </li>
+                            <div class="paltform">
+                                <div class="paltformbuttons">
+                                </div>
+                                <div class="preview">
+                                    <!-- <iframe  style="width:100%;aspect-ratio:16/9;" src="https://www.youtube.com/embed/YbQmvW3iUHU" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-a  posttype_card">
+                            <li class="li">
+                                <i class="iconfont icon-cards"></i>
+                                &nbsp;
+                                编辑卡片
+                            </li>
+                            <div class="card">
+                                <div class="cardbuttons">
+
+                                </div>
+                                <div class="cardedit">
+
+                                </div>
+                                <div style="margin-top:15px;padding-top:10px;border-top:1px solid #E4E7ED">
+                                    <span style="font-size:14px;color:#606266">预览卡片效果</span>
+                                    <div class="cardpreview"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-a  posttype_music">
+                            <li id="uploadMusic" class="li">
+                                <i class="iconfont icon-music"></i>
+                                &nbsp;
+                                点击上传音乐
+                                <div class="uploadMusicBar"></div>
+                            </li>
+                            <div class="musicarea">
+                                <div class="musicinfo">
+                                    <div class="item">
+                                        <div class="label">封面图</div>
+                                        <div class="value">
+                                            <div class="musiccover imageinput" id="musiccover"></div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="label">歌名</div>
+                                        <div class="value">
+                                            <input placeholder="请填写歌名" />
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="label">歌手</div>
+                                        <div class="value">
+                                            <input placeholder="请填写歌手名字" />
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="label">专辑</div>
+                                        <div class="value">
+                                            <input placeholder="请填写专辑名称" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <li id="locationinputbtn" class="li">
+                            <i class="iconfont icon-locationfill"></i>
+                            &nbsp;
+                            所在位置
+                        </li>
+                        <div class="menuinput" id="addressinputbox">
+                            <div style="flex: 1;">
+                                <input /> ·
+                                <input /> ·
+                                <input /> ·
+                                <input />
+                            </div>
+                            <div style="width: 40px;text-align: center;">
+                                <button class="getPosBtn">
+                                    <i class="iconfont icon-location"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </ul>
+                </div>
+                <div class="visibility">
+                    <input type="checkbox"> 仅限自己可见
+                </div>
+            </div>
+
+        </div>
+
+        <div class="settingpage" id="settingpage">
+            <ul>
+                <span class="label">个人设置</span>
+                <li class="row">
+                    <span class="key">登录邮箱</span>
+                    <span class="value" id="emailset"></span>
+                </li>
+                <li class="row">
+                    <span class="key">昵称</span>
+                    <input class="value" placeholder="设置昵称" id="nicknameset" />
+                </li>
+                <li class="column">
+                    <span class="key">个性签名</span>
+                    <div class="mysgin" contenteditable="true" placeholder="设置自己的个性签名吧" id="signset"></div>
+                </li>
+                <li class="row">
+                    <span class="key">头像</span>
+                    <div class="avatar" id="avatarset">
+
+                    </div>
+                </li>
+
+                <li class="row">
+                    <span class="key">封面图</span>
+                    <div class="mybanner" id="bannerset">
+
+                    </div>
+                </li>
+            </ul>
+
+            <ul style="margin-top: 20px;" id="operator">
+                <li style="text-align: center;" class="savesetting">保存设置</li>
+                <li style="text-align: center;" class="exitsetting">退出设置</li>
+            </ul>
+
+            <ul style="margin-top: 20px; display: none;" class="accountset">
+                <span class="label">账号管理</span>
+                <div id="accountlist"></div>
+                <li class="newuser" id="newuser">
+                    <a href="javascript:void(0)">添加新用户</a>
+                </li>
+            </ul>
+
+
+
+        </div>
+
+        {{end}}
+
+    </div>
+
+
+
+    <div class="footer">
+        {{ template "footer.html" .}}
+    </div>
+
+
+
+
+    <div class="toastbox" id="toastbox"></div>
+
+    <button id="gotop" class="scroll-top-button">
+        <i class="iconfont icon-yooxi"></i>
+    </button>
+
+    <div id="image-viewer" style="display: none;">
+        <div class="image-view-mask"></div>
+        <span class="image-viewer__btn image-viewer__close">
+            <i class="iconfont icon-close"></i>
+        </span>
+        <span class="image-viewer__btn image-viewer__prev">
+            <i class="iconfont icon-prev"></i>
+        </span>
+        <span class="image-viewer__btn image-viewer__next">
+            <i class="iconfont icon-next"></i>
+        </span>
+        <div class="image-viewer__canvas">
+            <img src="" id="image" />
+            <video src="" id="video" controls autoplay></video>
+            <img src="/static/images/loading.gif" class="waiticon" />
+        </div>
+    </div>
+
+    {{if $site.BaiDuTongJi}}
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?{{$site.BaiDuTongJi}}";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    {{end}}
+</body>

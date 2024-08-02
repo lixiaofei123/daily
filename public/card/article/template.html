@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="cover">
+        <img src="{{.model.cover.url}}" skeleton="image" />
+    </div>
+    <div class="box">
+        <div class="title" skeleton="text;width=100%,50%;line=2">
+            {{if .model.title}}
+                <a href="{{.model.url}}" target="_blank">{{.model.title}}</a>
+            {{end}}
+        </div>
+        <div class="meta" skeleton="text;width=80%;line=1">
+            {{if .model.author}}
+            <span>作者</span>
+            <span>{{.model.author}}</span>&nbsp;&nbsp;
+            {{end}}
+            {{if .model.time}}
+            <span>发布时间</span>
+            <span>{{.model.time}}</span>&nbsp;&nbsp;
+            {{end}}
+        </div>
+        <div class="abstract">
+            <div class="innter-abstract" skeleton="text;width=100%,100%,20%;line=3">
+                {{.model.abstract}}
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <a class="button" href="{{.model.url}}" target="_blank">立即阅读</a>
+    </div>
+   
+</div>

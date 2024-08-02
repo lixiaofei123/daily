@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily安装页面</title>
+    <script src="/static/js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/dialog.css" />
+    <script src="/static/js/dialog.js"></script>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: aliceblue;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            position: relative;
+            margin: 30px auto 30px auto;
+
+        }
+
+        .container .title {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #303133;
+        }
+
+        .container .schema {
+            background: white;
+            box-shadow: 6px 4px 4px rgb(202, 202, 202);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .configtitle {
+            margin-bottom: 10px;
+        }
+
+        .configtitle .title1 {
+            font-size: 20px;
+            color: #303133;
+        }
+
+        .configtitle span {
+            display: block;
+        }
+
+        .configtitle .desc {
+            font-size: 14px;
+            color: #606266;
+            margin-top: 10px;
+        }
+
+        .optiondesc{
+            font-size: 14px;
+            color: #606266;
+            margin-bottom: 10px;
+            margin-top: 8px;
+        }
+
+        .formcontainer {
+            width: 100%;
+        }
+
+        .formcontainer .border {
+            border: 1px solid #E4E7ED;
+            padding: 15px;
+        }
+
+        .formitem {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .formitem .formlabel {
+            text-align: right;
+            vertical-align: middle;
+            float: left;
+            font-size: 14px;
+            color: #606266;
+            line-height: 34px;
+            padding: 0 12px 0 0;
+            box-sizing: border-box;
+            width: 120px;
+        }
+
+        .formitem .formvalue {
+            flex: 1;
+        }
+
+        .formitem .desc {
+            font-size: 14px;
+            color: #606266;
+            margin-top: 4px;
+        }
+
+        .formitem .input {
+            appearance: none;
+            background-color: #fff;
+            background-image: none;
+            border-radius: 4px;
+            border: 1px solid #dcdfe6;
+            box-sizing: border-box;
+            color: #606266;
+            display: inline-block;
+            font-size: 14px;
+            height: 34px;
+            line-height: 34px;
+            outline: none;
+            padding: 0 15px;
+            transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+        }
+
+        .formitem .checkbox {
+            height: 30px;
+        }
+
+        .formitem .options {
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #dcdfe6;
+            font-size: 14px;
+            height: 34px;
+            outline: none;
+            color: #606266;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .primarybutton {
+            display: inline-block;
+            line-height: 1;
+            white-space: nowrap;
+            cursor: pointer;
+            text-align: center;
+            box-sizing: border-box;
+            outline: none;
+            margin: 0;
+            transition: .1s;
+            font-weight: 500;
+            padding: 12px 20px;
+            font-size: 14px;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #409eff;
+            border-color: #409eff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title">欢迎来到Daily安装页面</div>
+        <div class="formcontainer"></div>
+        <button class="primarybutton" id="submitbtn">提交配置</button>
+    </div>
+    <script src="static/js/install.js"></script>
+</body>

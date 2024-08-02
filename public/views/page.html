@@ -1,0 +1,135 @@
+{{$cuid := .cuid}}
+{{ $isMobile := .isMobile }}
+{{range .posts.Data}}
+<div class="post" postid="{{.Post.ID}}" id="post{{.Post.ID}}">
+    <div class="avatar-contanier">
+        <div class="avatar">
+            <a href="/user/{{.UserDetail.User.ID}}"><img src="{{.UserDetail.Profile.Avatar}}" /></a>
+        </div>
+    </div>
+    <div class="content">
+        {{if gt .Post.Priority 0}}
+        <div class="toptop">置顶</div>
+        {{end}}
+        <div class="content-0">
+            <div class="username"><a href="/user/{{.UserDetail.User.ID}}">{{.UserDetail.User.Username}}</a></div>
+            <div class="text">
+                {{ConvertContent .Post.Content}}
+            </div>
+            {{if eq .Post.PostType "url"}}
+            <div class="link-container">
+                <a href="{{.Post.Url.Url}}" target="blank">
+                    <div class="icon linkicon" linktype="link">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="link">
+                        <div class="text">
+                            {{.Post.Url.Title}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{else if eq .Post.PostType "external"}}
+            {{ExternalMediaToHtml $isMobile .Post.ExternalMedia}}
+            {{else if eq .Post.PostType "card"}}
+                {{RenderCard .Post.Card .}}
+            {{else if eq .Post.PostType "music"}}
+            {{$media := (index .Post.Medias 0)}}
+            <div class="musicplayer" id="music-{{.Post.ID}}">
+                 <div class="cover">
+                    {{if $media.Thumbnail}}
+                    <img loading="lazy" src="{{$media.Thumbnail}}" />
+                    {{else}}
+                        <img loading="lazy" src="/static/images/music_icon.png" />
+                    {{end}}
+                 </div>
+                 <div class="main">
+                    <div class="title">
+                        <span class="mtitle">{{if $media.Title}}{{$media.Title}}{{else}}未知{{end}}</span>
+                        {{if $media.Artist}}<span class="stitle">- {{ $media.Artist}}</span>{{end}}
+                        {{if $media.Album}}<span class="stitle">- {{ $media.Album}}</span>{{end}}
+                    </div>
+                    <div class="progress">
+                        <div class="progresstotal">
+                            <div class="progressbar"></div>
+                            <div class="ring"></div>
+                        </div>
+                        <span class="musictime">00:00</span>
+                    </div>
+                 </div>
+            </div>
+            <script>
+                new MusicPlayer('music-{{.Post.ID}}','{{ $media.Url}}',{{$media.Duration}} )
+            </script>
+            {{else if eq .Post.PostType "video"}}
+            <div class="singimage" id="image-{{.Post.ID}}">
+                <div class="post-img">
+                    <img loading="lazy" src="{{(index .Post.Medias 0).Thumbnail}}"
+                        url="{{(index .Post.Medias 0).Url}}"
+                        onload="showPlayButton(this, 'image-{{.Post.ID}}')" />
+                </div>
+            </div>
+            {{else if eq .Post.PostType "image"}}
+            {{$length := len .Post.Medias}}
+            {{if eq $length 1}}
+            {{if eq .Post.PostType "image"}}
+            <div class="singimage" id="image-{{.Post.ID}}">
+                <div class="post-img">
+                    <img loading="lazy" src="{{(index .Post.Medias 0).Thumbnail}}"
+                        url="{{(index .Post.Medias 0).Url}}"
+                        onclick="showImage('image-{{.Post.ID}}',0)" />
+                </div>
+            </div>
+            {{end}}
+            {{end}}
+            {{if gt $length 1}}
+            <div class="images"  id="image-{{.Post.ID}}">
+                {{$postid := .Post.ID}}
+                {{range $index, $image := .Post.Medias}}
+                <div class="post-img">
+                    <img loading="lazy" src="{{$image.Thumbnail}}" url="{{$image.Url}}" onclick="showImage('image-{{$postid}}',{{$index}})" />
+                </div>
+                {{end}}
+            </div>
+            {{end}}
+            {{end}}
+
+            <div class="position">
+                <span>{{.Post.Address}}</span>
+
+                {{if .Post.IsUpdated }}
+                    <span style="color:#909399">已编辑</span>
+                {{end}}
+            </div>
+            <div class="publishtime">
+                <span>{{ DateBeautify .Post.CreatedAt}}</span>
+
+                {{if eq .Post.UserID $cuid}}
+                <a href="javascript:void(0)" onclick="deletePost({{.Post.ID}})">
+                    <i class="iconfont icon-delete1" style="font-size:18px" ></i>
+                </a>
+                 {{if or ( or (eq .Post.PostType "text") (eq .Post.PostType "image")) (eq .Post.PostType "video") }}
+                <a href="javascript:void(0)" onclick="editPost({{.Post.ID}})">
+                    <i class="iconfont icon-edit"></i>
+                </a>
+                {{end}}
+                {{if gt .Post.Priority 0}}
+                <a href="javascript:void(0)" onclick="setPostTop({{.Post.ID}}, false)">取消置顶</a>
+                {{else}}
+                <a href="javascript:void(0)" onclick="setPostTop({{.Post.ID}}, true)">置顶</a>
+                {{end}}
+                {{end}}
+
+                {{if eq .Post.Visibility "private"}}
+                <i class="iconfont icon-eyeslash-fill" style="font-size:18px;vertical-align: bottom;margin-left: 5px"></i>
+                {{end}}
+                
+
+            </div>
+            <script>
+                initPostComponents({{.Post.ID}},{{.Post.UserID}})
+            </script>
+        </div>
+    </div>
+</div>
+{{end}}

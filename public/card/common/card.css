@@ -1,0 +1,122 @@
+.card{
+    width: calc(100% - 30px);
+    padding:15px;
+    height: 160px;
+    display: flex;border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #ccc;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    position:relative
+    
+}@media only screen and (max-width: 450px) {
+.card{
+    padding: 8px;
+    height: 106px;
+    
+}
+}
+
+.background{
+    position:absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    background-size:cover
+    
+}
+.left{
+    z-index:10; 
+    width: 120px;
+    overflow:hidden;
+    border-radius:4px;
+    
+}@media only screen and (max-width: 450px) {
+.left{
+        width: 80px;
+    
+}
+}
+
+.left img{
+    width: 120px;
+    height: 160px;
+    object-fit:cover;
+    
+}@media only screen and (max-width: 450px) {
+.left img{
+        width: 80px;
+        height: 106px;
+    
+}
+}
+
+.right{
+    flex:1;
+    margin-left:15px;
+    z-index:10;
+    
+}
+.right .title{
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    color: #303133;
+    word-break: break-all;
+    
+}
+.right .subtitle{
+            font-size: 12px;
+            margin-top: 5px;
+            color: #606266;
+            font-weight: 500;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            height: 16px;
+            overflow: hidden;
+    
+}
+.right .description{
+            font-size: 14px;
+            margin-top: 10px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            color: #606266;
+            line-height: 20px;
+            font-weight: 500;
+            word-break: break-all;
+    
+}@media only screen and (max-width: 450px) {
+.right .description{
+        display:none;
+    
+}
+}
+
+.right .button{
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+        background: #409EFF;
+        text-decoration: none;
+        color: white;
+        outline: none;
+        cursor: pointer;
+        padding: 5px 15px;
+        font-size: 14px;
+        border-radius: 4px;
+    
+}
+.right .button::hover{
+        background: #2992ff;
+    
+}

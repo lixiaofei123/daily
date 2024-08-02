@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: daily
+      POSTGRES_PASSWORD: daily123
+      POSTGRES_DB: daily
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  daily_app:
+    image: mrlee326/daily:latest
+    container_name: daily_app
+    restart: always
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USER: daily
+      DATABASE_PASSWORD: daily123
+      DATABASE_NAME: daily
+    volumes:
+      - ./config.yaml:/app/config.yaml
+
+volumes:
+  postgres_data:

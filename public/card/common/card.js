@@ -1,0 +1,1 @@
+console.log("Common卡片实例初始化")

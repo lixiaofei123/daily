@@ -1,0 +1,129 @@
+
+.dialog {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    background: rgb(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dialog .inner-dialog {
+    width: 360px;
+    background: white;
+    border: 1px solid #c2c2c2;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+.dialog .inner-dialog .title {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 10px;
+}
+
+.dialog .inner-dialog .tips{
+    color: #606266;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.dialog .inner-dialog .body {
+    padding: 15px 10px;
+}
+
+.dialog .inner-dialog .bottom {
+    margin-right: 15px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+
+.dialog .inner-dialog .bottom button {
+    padding: 8px 15px;
+    border: 0px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 8px;
+}
+
+.dialog .inner-dialog .bottom .confirm {
+    background: #07BF5B;
+    color: white;
+}
+
+.dialog .inner-dialog .bottom .confirm:hover {
+    background: #079c4a;
+}
+
+
+.dialog .inner-dialog .bottom .danger {
+    background: #FA5251;
+    color: white;
+}
+
+.dialog .inner-dialog .bottom .danger:hover {
+    background: #d04242;
+}
+
+.dialog .inner-dialog .bottom .cancel {
+    background: #F2F2F2;
+    color: #2f2f2f;
+}
+
+.dialog .inner-dialog .bottom .cancel:hover {
+    background: #dadada;
+}
+
+.dialog .inner-dialog .formitem {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.dialog .inner-dialog .formitem span {
+    width: 50px;
+    padding-right: 10px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.dialog .inner-dialog .formitem input {
+    flex: 1;
+    border: 1px solid #DCDFE6;
+    border-radius: 2px;
+    padding: 5px 10px;
+    font-size: 16px;
+    outline: none;
+    vertical-align: middle;
+}
+
+.dialog .inner-dialog .formerror {
+    color: #F56C6C;
+    font-size: 14px;
+    margin-top: -8px;
+    margin-left: 60px;
+    margin-bottom: 15px;
+}
+
+.dialog .inner-dialog ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.dialog .inner-dialog ul li{
+    list-style: none;
+    padding: 10px 15px;
+    color: #606266;
+    cursor: pointer;
+}
+
+.dialog .inner-dialog ul li:hover{
+    background: #409EFF;
+    color: white;
+}

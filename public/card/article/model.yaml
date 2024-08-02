@@ -1,0 +1,24 @@
+cover: 
+  type: image
+  displayName: 封面
+  aspectRadio: "7:4"
+  required: true
+title: 
+  type: string
+  displayName: 文章标题
+  required: true
+url: 
+  type: string
+  displayName: 文章地址
+  required: true
+author: 
+  type: string
+  displayName: 作者
+  required: true
+time:
+  type: string
+  displayName: 发布时间
+abstract:
+  type: string
+  displayName: 内容概要
+  long: true

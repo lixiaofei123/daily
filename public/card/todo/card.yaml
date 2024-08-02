@@ -1,0 +1,6 @@
+displayName: 待办事项
+css: card.css
+model: model.yaml
+template: template.html
+javascript: card.js
+jsDataScopes: 

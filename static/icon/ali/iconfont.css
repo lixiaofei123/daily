@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4632192 */
+  src: url('iconfont.woff2?t=1721833779589') format('woff2'),
+       url('iconfont.woff?t=1721833779589') format('woff'),
+       url('iconfont.ttf?t=1721833779589') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-delete1:before {
+  content: "\e60e";
+}
+
+.icon-edit:before {
+  content: "\e623";
+}
+
+.icon-locationfill:before {
+  content: "\e650";
+}
+
+.icon-set:before {
+  content: "\e600";
+}
+
+.icon-camera2:before {
+  content: "\e601";
+}
+
+.icon-close:before {
+  content: "\e626";
+}
+
+.icon-yooxi:before {
+  content: "\e60b";
+}
+
+.icon-tel:before {
+  content: "\e642";
+}
+
+.icon-wechat:before {
+  content: "\e658";
+}
+
+.icon-next:before {
+  content: "\e615";
+}
+
+.icon-cards:before {
+  content: "\e68b";
+}
+
+.icon-prev:before {
+  content: "\e65f";
+}
+
+.icon-play-filling:before {
+  content: "\e87e";
+}
+
+.icon-link:before {
+  content: "\e772";
+}
+
+.icon-eyeslash-fill:before {
+  content: "\e7aa";
+}
+
+.icon-pausecircle-fill:before {
+  content: "\e7cb";
+}
+
+.icon-comment-dots:before {
+  content: "\e7ea";
+}
+
+.icon-switch:before {
+  content: "\e837";
+}
+
+.icon-home:before {
+  content: "\e6f9";
+}
+
+.icon-logout:before {
+  content: "\e635";
+}
+
+.icon-login:before {
+  content: "\e636";
+}
+
+.icon-like:before {
+  content: "\e64e";
+}
+
+.icon-email:before {
+  content: "\e604";
+}
+
+.icon-www:before {
+  content: "\e612";
+}
+
+.icon-delete:before {
+  content: "\e679";
+}
+
+.icon-music:before {
+  content: "\e680";
+}
+
+.icon-like1:before {
+  content: "\e682";
+}
+
+.icon-location:before {
+  content: "\e629";
+}
+
+.icon-video-fill:before {
+  content: "\e871";
+}
+

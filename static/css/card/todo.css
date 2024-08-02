@@ -1,0 +1,72 @@
+/* 由程序每次启动时自动生成，请勿修改 */
+
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card  {
+  width: calc(100% - 20px);
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #ccc;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  position: relative;
+  padding: 10px;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .cover  {
+  width: 80px;
+  height: 118px;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .card-container  {
+  width: 100%;
+  display: flex;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .card-container .cover  {
+  width: 80px;
+  margin-right: 10px;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .card-container .cover  {
+  object-fit: cover;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .card-container .info  {
+  flex: 1;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .card-container .info .todolist  {
+  font-size: 16px;
+  line-height: 25px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: #606266;
+  word-break: break-all;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .card-container .info .countdown  {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: right;
+  margin-right: 20px;
+  color: #606266;
+  align-items: baseline;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .card-container .info .bigtext  {
+  font-size: 26px;
+  align-items: baseline;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .card-container .info .finished  {
+  color: #F56C6C;
+  font-size: 24px;
+}
+.card-ea5cb8ff0abf6b4ca0080069daaeada0 .card .card-container .info .endTime  {
+  font-size: 14px;
+  text-align: right;
+  margin-top: 5px;
+  margin-right: 20px;
+  color: #909399;
+}
+@media only screen and (max-width: 450px)  {
+  .card-ea5cb8ff0abf6b4ca0080069daaeada0 .bigscreen  {
+    display: none;
+  }
+}

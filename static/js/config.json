@@ -1,0 +1,335 @@
+[
+    {
+        "label": "站点配置",
+        "name": "site",
+        "type": "object",
+        "props": [
+            {
+                "label": "站点名称",
+                "name": "title",
+                "type": "string",
+                "required": true
+            },
+            {
+                "label": "ICP备案号",
+                "name": "icp",
+                "type": "string"
+            },
+            {
+                "label": "Favicon",
+                "name": "favicon",
+                "type": "string",
+                "desc": "即浏览器标签旁边的小图标，如果不填，默认为用户头像"
+            },
+            {
+                "label": "背景图",
+                "name": "background",
+                "type": "string",
+                "desc": "朋友圈背景图，需要填写一个图片的URL。不填的话为灰白色背景"
+            },
+            {
+                "label": "百度统计ID",
+                "name": "BaiDuTongJi",
+                "type": "string",
+                "desc": "在百度站长平台上注册后，给出的统计代码中hm.src?后面的唯一字符串"
+            },
+            {
+                "label": "开启强制压缩",
+                "name": "imageCompress",
+                "type": "boolean",
+                "desc": "如果开启，则会尽量将图片转为webp格式来节省空间(Gif动图不会被压缩)"
+            }
+        ]
+    },
+    {
+        "label": "定位",
+        "name": "lbs",
+        "type": "object",
+        "desc": "发布朋友圈页面的IP定位功能所需要的设置，此项可以不设置。朋友圈的发布地址可以由自己手动填写",
+        "props": [
+            {
+                "label": "平台类型",
+                "name": "name",
+                "type": "option",
+                "options": [
+                    {
+                        "label": "百度",
+                        "value": "Baidu"
+                    }
+                ]
+            },
+            {
+                "label": "配置",
+                "name": "config",
+                "type": "ref",
+                "ref": "name",
+                "props": [
+                    {
+                        "value": "Baidu",
+                        "props": [
+                            {
+                                "label": "AK",
+                                "name": "ak",
+                                "type": "string",
+                                "desc": "请自行前往百度LBS平台注册，请注意在LBS注册应用的时候，应用类型选择服务器应用"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "存储",
+        "name": "uploader",
+        "type": "object",
+        "required": true,
+        "desc": "图片、视频等存储的保存地址",
+        "props": [
+            {
+                "label": "存储类型",
+                "name": "name",
+                "type": "option",
+                "required": true,
+                "options": [
+                    {
+                        "label": "本地模式",
+                        "value": "Local",
+                        "desc": "保存本地服务器上"
+                    },
+                    {
+                        "label": "远程模式",
+                        "value": "Remote",
+                        "desc": "保存在另一台服务器上,需配合daily_fileserver使用"
+                    },
+                    {
+                        "label": "S3存储",
+                        "value": "S3",
+                        "desc": "理论上支持AWS S3、阿里云OSS、腾讯云COS等所有S3兼容存储"
+                    },
+                    {
+                        "label": "123云盘",
+                        "value": "123YunPanOpenAPI",
+                        "desc": "使用123云盘的空间以及直链流量,需要开通123云盘会员并且申请开发者后方可使用。"
+                    }
+                ]
+            },
+            {
+                "label": "配置",
+                "name": "config",
+                "type": "ref",
+                "ref": "name",
+                "props": [
+                    {
+                        "value": "Local",
+                        "props": [
+                            {
+                                "label": "根路径",
+                                "name": "root",
+                                "type": "string",
+                                "required": true,
+                                "desc": "数据保存的目录"
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Remote",
+                        "props": [
+                            {
+                                "label": "远程服务密钥",
+                                "name": "secret",
+                                "type": "string",
+                                "required": true,
+                                "desc": "请和daily_fileserver保持一致"
+                            },
+                            {
+                                "label": "远程服务地址",
+                                "name": "url",
+                                "type": "string",
+                                "required": true,
+                                "desc": "daily_fileserver服务的地址"
+                            }
+                        ]
+                    },
+                    {
+                        "value": "S3",
+                        "props": [
+                            {
+                                "label": "SecretId",
+                                "name": "secretId",
+                                "type": "string",
+                                "required": true
+                            },
+                            {
+                                "label": "SecretKey",
+                                "name": "SecretKey",
+                                "type": "string",
+                                "required": true
+                            },
+                            {
+                                "label": "Region",
+                                "name": "Region",
+                                "type": "string",
+                                "required": true
+                            },
+                            {
+                                "label": "Endpoint",
+                                "name": "endpoint",
+                                "type": "string",
+                                "required": true
+                            },
+                            {
+                                "label": "Bucket",
+                                "name": "bucket",
+                                "type": "string",
+                                "required": true
+                            },
+                            {
+                                "label": "VirutalHost",
+                                "name": "virutalHost",
+                                "type": "boolean",
+                                "required": true,
+                                "default": true,
+                                "reqtype": "string",
+                                "desc": "虚拟主机名模式，公有云一般为true，自建S3的话一般为false。具体什么意思自己百度吧"
+                            },
+                            {
+                                "label": "Domain",
+                                "name": "domain",
+                                "type": "string",
+                                "desc": "如果绑定了域名，这里填写绑定后的域名。需要加上https://或者http://"
+                            },
+                            {
+                                "label": "鉴权配置",
+                                "name": "pkey",
+                                "type": "string",
+                                "desc": "如果使用腾讯云CDN的话，可以在CDN的访问控制中开启鉴权，鉴权模式选择TypeD，鉴权算法选择md5"
+                            }
+                        ]
+                    },
+                    {
+                        "value": "123YunPanOpenAPI",
+                        "props": [
+                            {
+                                "label": "ClientID",
+                                "name": "clientID",
+                                "type": "string",
+                                "required": true,
+                                "desc": "申请123云盘开放平台开发者后可获取"
+                            },
+                            {
+                                "label": "ClientSecret",
+                                "name": "clientSecret",
+                                "type": "string",
+                                "required": true,
+                                "desc": "申请123云盘开放平台开发者后可获取"
+                            },
+                            {
+                                "label": "直链空间文件夹",
+                                "name": "dlzone",
+                                "type": "string",
+                                "required": true,
+                                "desc": "直链空间文件夹的名称，请在123云盘处设置后并在这里填写"
+                            },
+                            {
+                                "label": "用户ID",
+                                "name": "uid",
+                                "type": "string",
+                                "required": true,
+                                "desc": "123云盘用户ID，请在123云盘用户中心页面查看。(不是手机号)"
+                            },
+                            {
+                                "label": "鉴权密钥",
+                                "name": "signKey",
+                                "type": "string",
+                                "desc": "如果在123云盘处开启了鉴权，这里也需要填写。(非必须开启，但是建议开启)"
+                            },
+                            {
+                                "label": "有效期",
+                                "name": "signTime",
+                                "type": "integer",
+                                "default": 60,
+                                "reqtype": "string",
+                                "desc": "鉴权url的有效期，单位为秒"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "label": "访问日志",
+                "name": "logger",
+                "type": "object",
+                "props": [
+                    {
+                        "label": "日志保存路径",
+                        "name": "path",
+                        "type": "string",
+                        "desc": "图片等资源的访问日志，如果图片地址被滥用的话，可以查询日志。如果将服务部署在了反向代理之后，需要通过X-Real-Ip传递真实IP"
+                    }
+                ]
+            },
+            {
+                "label": "限流配置",
+                "name": "ratelimit",
+                "type": "string",
+                "desc": "图片等资源的限流配置，可以在一定程度上访问服务器、CDN、123云盘被刷流量（只是提高了一点门槛，非百分百安全），不填则不限制。格式为 次数:间隔(范围是秒) ，如果配置多条，请用;隔开。例如 100:60;5000:3600 ,代表每分钟允许访问100次，每小时允许5000次。请注意，这个是全局的限制，不是针对单个IP的限制"
+            }
+        ]
+    },
+    {
+        "label": "登陆",
+        "name": "auth",
+        "type": "object",
+        "required": true,
+        "props": [
+            {
+                "label": "密钥",
+                "name": "secret",
+                "type": "string",
+                "required": true,
+                "desc": "请设置一个足够复杂的字符串"
+            }
+        ]
+    },
+    {
+        "label": "MySQL数据库",
+        "name": "database",
+        "type": "object",
+        "required": true,
+        "props": [
+            {
+                "label": "地址",
+                "name": "host",
+                "type": "string",
+                "required": true,
+                "default": "127.0.0.1"
+            },
+            {
+                "label": "端口",
+                "name": "port",
+                "type": "integer",
+                "required": true,
+                "default": 3306
+            },
+            {
+                "label": "用户名",
+                "name": "user",
+                "type": "string",
+                "required": true
+            },
+            {
+                "label": "密码",
+                "name": "password",
+                "type": "string",
+                "required": true
+            },
+            {
+                "label": "数据库名称",
+                "name": "name",
+                "type": "string",
+                "required": true
+            }
+        ]
+    }
+]

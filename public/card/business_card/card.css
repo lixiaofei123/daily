@@ -1,0 +1,120 @@
+.card {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #ccc;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    position: relative
+}
+
+.card .top {
+    width: 100%;
+    height: 120px;
+    display: flex;
+}
+
+.card .top .avatar {
+    margin: 20px;
+    border-radius: 40px;
+    width: 80px;
+    overflow: hidden;
+}
+
+.card .top .avatar img {
+    width: 80px;
+    height: 80px;
+}
+
+.card .top .infos {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.card .top .infos .name {
+    font-size: 22px;
+    font-weight: 600;
+    color: #303133;
+    line-height: 32px;
+}
+
+.card .top .infos .job {
+    font-size: 14px;
+    color: #606266;
+    line-height: 24px;
+}
+
+.card .top .infos .company {
+    font-size: 14px;
+    color: #606266;
+    line-height: 20px;
+}
+
+.card .bottom {
+    padding: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.card .bottom ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.card .bottom li {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    padding-bottom: 6px;
+    color: #606266;
+}
+
+
+.card .bottom li span {
+    vertical-align: middle;
+}
+
+
+
+.card .bottom li a {
+    text-decoration: none;
+    color: #606266;
+    vertical-align: baseline;
+}
+
+.card .bottom li a:hover {
+    text-decoration: underline;
+}
+
+.card .bottom .qrcode {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 120px;
+    text-align: center;
+}
+
+.card .bottom .qrcode img {
+    width: 80px;
+    height: 80px;
+}
+
+.card .bottom .qrcode .text {
+    font-size: 14px;
+    color: #909399;
+}
+
+@media only screen and (max-width: 450px) {
+    .card .bottom .qrcode {
+        display: none;
+    }
+}
+
+.card .iconfont{
+    font-size: 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+}

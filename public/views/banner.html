@@ -1,0 +1,41 @@
+<div class="banner">
+    <img src="{{.user.Profile.Cover}}" />  
+    {{ if or .uid  .isDetail}}
+        <div class="homeicon">
+            <div id="homeicon">
+                <i class="iconfont icon-home"></i>
+            </div>
+        </div>
+    {{end}}
+
+    <div class="bannericon" id="bannericon">
+        {{if .cuid}}
+        <div id="switchAccountbtn">
+            <i class="iconfont icon-switch"></i>
+        </div>
+        <div id="settingbtn">
+            <i class="iconfont icon-set" style="font-size: 20px;"></i>
+        </div>
+        <div id="camerabtn">
+            <i class="iconfont icon-camera2"></i>
+        </div>
+        <div id="logoutbtn">
+            <i class="iconfont icon-logout"></i>
+        </div>
+        {{else}}
+        <div id="loginbtn">
+            <i class="iconfont icon-login"></i>
+        </div>
+        {{end}}
+        
+    </div>
+    <div class="userinfo">
+        <div class="avatar">
+            <img src="{{.user.Profile.Avatar}}" />
+        </div>
+        <div class="username">{{.user.User.Username}}</div>
+        <div class="signature">
+            {{.user.Profile.Signature}}
+        </div>
+    </div>
+</div>

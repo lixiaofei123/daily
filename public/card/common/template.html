@@ -1,0 +1,14 @@
+<div class="card">
+    {{if .model.background}}
+        <div class="background" style="background-image: url({{.model.background.url}});"></div>
+    {{end}}
+    <div class="left">
+        <img src="{{.model.cover.url}}" skeleton="image" />
+    </div>
+    <div class="right">
+        <div class="title" skeleton="text;width=100%,80%;line=2">{{.model.title}}</div>
+        <div class="subtitle" skeleton="text;width=50%;line=1" >{{.model.subTitle}}</div>
+        <div class="description"  skeleton="text;width=100%,100%,30%;line=3">{{.model.description}}</div>
+        <a class="button" href="{{.model.button.url}}" target="_blank" skeleton="button">{{.model.button.title}}</a> 
+    </div>
+</div>

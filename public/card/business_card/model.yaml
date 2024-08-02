@@ -1,0 +1,40 @@
+avatar: 
+  type: image
+  displayName: 头像
+  aspectRadio: "1:1"
+  required: true
+name: 
+  type: string
+  displayName: 姓名
+  required: true
+job: 
+  type: string
+  displayName: 职位
+  required: true
+company: 
+  type: string
+  displayName: 公司
+  required: true
+email: 
+  type: string
+  displayName: 邮箱
+  required: true
+tel: 
+  type: string
+  displayName: 电话
+wechat: 
+  type: string
+  displayName: 微信
+site: 
+  type: string
+  displayName: 个人主页
+address: 
+  type: string
+  displayName: 联系地址
+qrcode:
+  type: image
+  displayName: 二维码
+  aspectRadio: "1:1"
+qrcode_text:
+  type: string
+  displayName: 二维码提示文字

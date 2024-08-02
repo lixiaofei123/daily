@@ -1,0 +1,14 @@
+cover: 
+  type: image
+  displayName: 封面
+  aspectRadio: "80:118"
+  required: true
+todo:
+  type: string
+  displayName: 事项
+  long: true
+  required: true
+endTime: 
+  type: datetime
+  displayName: 结束时间
+  required: true

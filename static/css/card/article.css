@@ -1,0 +1,75 @@
+/* 由程序每次启动时自动生成，请勿修改 */
+
+.card-92a2b5cb9c6906035c2864fa225e1940 .card {
+  width: 100%;
+  max-width: 350px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #ccc;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  position:relative
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .cover {
+  width: 100%;
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .cover img {
+  width: 100%;
+  aspect-ratio: 10 / 6;
+  object-fit: cover;
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .box {
+  padding: 10px;
+  border-bottom: 1px solid #E4E7ED;
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .box .title {
+  font-size: 18px;
+  line-height: 26px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: #303133;
+  word-break: break-all;
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .box .title a {
+  color: #303133;
+  text-decoration: none;
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .box .meta {
+  font-size: 14px;
+  color: #909399;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .box .innter-abstract {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: #606266;
+  word-break: break-all;
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .bottom {
+  padding: 8px 0px;
+  width: 100%;
+  text-align: right;
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .bottom .button {
+  padding: 5px 10px;
+  color: #409eff;
+  margin-right: 15px;
+  text-decoration: none;
+}
+.card-92a2b5cb9c6906035c2864fa225e1940 .card .bottom .button:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,7 @@
+displayName: 通用卡片
+css: card.css
+model: model.yaml
+template: template.html
+javascript: 
+jsDataScopes: 
+globalJavascript: 

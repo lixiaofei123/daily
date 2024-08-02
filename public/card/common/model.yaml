@@ -1,0 +1,26 @@
+background: 
+  type: image
+  displayName: 背景
+  aspectRadio: "7:4"
+cover: 
+  type: image
+  displayName: 封面
+  aspectRadio: "3:4"
+  required: true
+title: 
+  type: string
+  displayName: 一级标题
+  required: true
+subTitle: 
+  type: string
+  displayName: 二级标题
+description:
+  type: string
+  displayName: 简介
+  long: true
+button: 
+  type: link
+  displayName: 按钮设置
+  required: true
+
+  
