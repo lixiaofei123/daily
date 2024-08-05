@@ -249,14 +249,13 @@ div {
     color: #616E8C;
     font-size: 14px;
     margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .posts-container .post .content .publishtime {
     color: #B3B3B3;
     font-size: 14px;
     margin-top: 6px;
+    line-height: 14px;
 }
 
 .posts-container .post .content .publishtime a {
