@@ -105,13 +105,9 @@
                 <span>{{ DateBeautify .Post.CreatedAt}}</span>
 
                 {{if eq .Post.UserID $cuid}}
-                <a href="javascript:void(0)" onclick="deletePost({{.Post.ID}})">
-                    <i class="iconfont icon-delete1" style="font-size:18px" ></i>
-                </a>
+                <a href="javascript:void(0)" onclick="deletePost({{.Post.ID}})">删除</a>
                  {{if or ( or (eq .Post.PostType "text") (eq .Post.PostType "image")) (eq .Post.PostType "video") }}
-                <a href="javascript:void(0)" onclick="editPost({{.Post.ID}})">
-                    <i class="iconfont icon-edit"></i>
-                </a>
+                <a href="javascript:void(0)" onclick="editPost({{.Post.ID}})">编辑</a>
                 {{end}}
                 {{if gt .Post.Priority 0}}
                 <a href="javascript:void(0)" onclick="setPostTop({{.Post.ID}}, false)">取消置顶</a>

@@ -191,7 +191,7 @@ div {
 
 .posts-container .post .content .text a {
     text-decoration: none;
-    color: #409eff;
+    color: #718198;
     vertical-align: baseline;
 }
 
@@ -262,7 +262,7 @@ div {
 .posts-container .post .content .publishtime a {
     text-decoration: none;
     font-size: 14px;
-    margin-left: 15px;
+    margin-left: 8px;
     color: #718198;
     
 }
@@ -483,7 +483,7 @@ div {
     height: 96px;
     outline: none;
     overflow-x: hidden;
-    font-size: 14px;
+    font-size: 12px;
     color: #606266;
     width: calc(100% - 16px);
     resize: none;
@@ -597,7 +597,7 @@ div {
 }
 
 .container .publish-post .iconfont{
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .container .publish-post .editarea-ops {
@@ -819,6 +819,8 @@ div {
     cursor: pointer;
     background: #FA5251;
     color: white;
+    text-align: center;
+    line-height: 22px;
 }
 
 .uploader .deleteicon:hover {
@@ -861,7 +863,7 @@ div {
 }
 
 .container .publish-post .editpost .menuitems .li * {
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
 .container .publish-post .editpost .menuitems .menuinput {

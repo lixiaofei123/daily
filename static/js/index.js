@@ -187,6 +187,10 @@ class CommentInputBox {
         this.emailinput = emailinput
         this.nameinput = nameinput
 
+        emailinput.on("focus", async () => {
+            emailinput.css("color", "")
+        })
+
         emailinput.on("blur", async () => {
             let email = emailinput.val()
             if (emailregex.test(email)) {
