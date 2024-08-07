@@ -204,6 +204,15 @@ div {
     text-decoration: none;
     color: #718198;
     vertical-align: baseline;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.posts-container .post .content .text a::before {
+    font-family: "iconfont" !important;
+    content: "\e772";
+    margin-right: 2px;
+    font-size: 12px;
 }
 
 .posts-container .post .content .images {
