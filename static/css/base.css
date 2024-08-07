@@ -173,7 +173,7 @@ div {
 
 .posts-container .post .content .username a {
     color: #5F6E8F;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     margin-bottom: 6px;
     text-decoration: none;
@@ -182,12 +182,23 @@ div {
 
 .posts-container .post .content .text {
     color: #212121;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
     margin-bottom: 6px;
     word-break: break-all;
 }
 
+
+@media only screen and (max-width: 450px)  {
+    .posts-container .post .content .username a {
+        font-size: 16px;
+    }
+    
+    .posts-container .post .content .text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+  }
 
 .posts-container .post .content .text a {
     text-decoration: none;
