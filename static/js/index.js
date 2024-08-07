@@ -1616,7 +1616,7 @@ function resetEditPage(posttype, post) {
     // 文本框
     editpostText.html("")
     if (post) {
-        editpostText.html(post.content)
+        editpostText.html(post.content.replaceAll("\n","<br>"))
     }
 
     // 地址
